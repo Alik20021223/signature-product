@@ -1,4 +1,4 @@
-const TelegramBot = require('node-telegram-bot-api')
+import TelegramBot from 'node-telegram-bot-api'
 
 // Замените значение ниже на токен, который вы получили от @BotFather
 const token = '7750952019:AAH5VhoGT7Y-9FaNzi_7NMGIqUy2Hn13srE';
