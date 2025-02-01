@@ -1,0 +1,20 @@
+{
+    "sendToBankTxt": "Envoyer un virement via SBP",
+    "sendMoneyDetailsTxt": "Transférez {{price}} ₽ selon les coordonnées indiquées",
+    "transferToWhereTxt": "Virement vers la Banque du Tadjikistan (+992)",
+    "detailsPayTxt": "Banque Alif Bank, Bénéficiaire : Safarov I.",
+    "howToSendMoneyTajTxt": "Comment transférer de l'argent au Tadjikistan ?",
+    "howToSendMoneyTajTitle": "Ouvrez l'application de votre banque",
+    "howToSendMoneyTajMethod1": "\"Paiements\" → Vers un autre pays",
+    "howToSendMoneyTajMethod2": "Tadjikistan → VERS UNE CARTE OU UN COMPTE",
+    "howToSendMoneyTajMethod3": "Sélectionnez \"Banque Alif Bank, Bénéficiaire : Safarov I\"",
+    "howToSendMoneyTajEntrySum": "Saisissez le montant → Transférer",
+    "howToSendMoneyTajDescribe": "Le transfert sera effectué de la même manière qu'un virement vers une autre banque !",
+    "warningTxt": "Si vous transférez à d'autres coordonnées ou dans une autre banque, le dépôt ne sera pas crédité",
+    "exactTransferAmount": "Montant exact du transfert",
+    "transferDescribe": "Des centimes ont été ajoutés au montant, maintenant 2 625.10 ₽. Envoyez le montant exact pour un crédit instantané",
+    "supportTxt": "Support",
+    "sendTransferTxt": "J'ai effectué le transfert",
+    "comissiongTxt": "Commission",
+    "timeToTransfer": "Temps pour effectuer le paiement, sinon le paiement sera annulé"
+}

@@ -1,0 +1,20 @@
+{
+    "sendToBankTxt": "Отправьте перевод через СБП",
+    "sendMoneyDetailsTxt": "Переведите {{price}} ₽ по указанным реквизитам",
+    "transferToWhereTxt": "Перевод в Банк Таджикистана (+992)",
+    "detailsPayTxt": "Банк Алиф Банк, Получатель: Safarov I.",
+    "howToSendMoneyTajTxt": "Как перевести деньги в Таджикистан?",
+    "howToSendMoneyTajTitle": "Откройте приложение Вашего банка",
+    "howToSendMoneyTajMethod1": "\"Платежи\" → В другую страну",
+    "howToSendMoneyTajMethod2": "Таджикистан → НА КАРТУ ИЛИ СЧЕТ",
+    "howToSendMoneyTajMethod3": "Выберите \"Банк Алиф Банк, Получатель: Safarov I\"",
+    "howToSendMoneyTajEntrySum": "Введите сумму → Перевести",
+    "howToSendMoneyTajDescribe": "Перевод будет отправлен аналогично переводу в другой банк!",
+    "warningTxt": "Если вы переведёте на другие реквизиты или в другой банк, пополнение не поступит",
+    "exactTransferAmount": "Точная сумма перевода",
+    "transferDescribe": "К сумме были добавлены копейки, сейчас {{price}} Отправляйте точную сумму, чтобы пополнение поступило моментально",
+    "supportTxt": "Поддержка",
+    "sendTransferTxt": "Я отправил перевод",
+    "comissiongTxt": "Комиссия",
+    "timeToTransfer": "Время на оплату платежа, иначе платёж будет отменён"
+}

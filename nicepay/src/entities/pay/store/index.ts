@@ -1,8 +1,13 @@
 import { create } from "zustand";
+import { Lang } from "@entities/pay/types";
+import { LanguageMock } from "@entities/pay/mock";
+import i18n from "i18next";
 
 type State = {
   timeLeft: number; // Оставшееся время в секундах
   isTimerRunning: boolean; // Флаг для управления таймером
+  isSearchDetails: boolean;
+  activeLang: Lang;
 };
 
 type Actions = {
@@ -11,13 +16,15 @@ type Actions = {
   resetTimer: (seconds: number) => void; // Сброс таймера на указанное количество секунд
   decrementTime: () => void; // Уменьшение времени на 1 секунду
   formatTime: () => string;
+  stopSearchDetails: () => void;
+  changeLang: (activatedLang: Lang) => void;
 };
 
 export const usePayStore = create<State & Actions>((set, get) => ({
-  
   timeLeft: 600,
   isTimerRunning: false,
-
+  isSearchDetails: true,
+  activeLang: LanguageMock[0],
   // Действия
   startTimer: () => {
     set({ isTimerRunning: true });
@@ -43,5 +50,12 @@ export const usePayStore = create<State & Actions>((set, get) => ({
       }
       return { timeLeft: state.timeLeft - 1 };
     });
+  },
+  stopSearchDetails: () => {
+    set({ isSearchDetails: false });
+  },
+  changeLang: (Language: Lang) => {
+    i18n.changeLanguage(Language.tag);
+    set({ activeLang: Language });
   },
 }));

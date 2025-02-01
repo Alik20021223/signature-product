@@ -1,8 +1,4 @@
 import { PayContent } from "@widgets/pay/pay-content/ui"
-// import ContentAddFile from "@entities/pay/ui/content-add-file/ui"
-
-
-
 
 function App() {
 

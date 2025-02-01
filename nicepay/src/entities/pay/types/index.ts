@@ -5,13 +5,6 @@ export type DetailsPaymentType = {
   detailsPay: string;
 };
 
-export type CollapseCustomTypes = {
-  titleCollapse: string;
-  method_1: string;
-  method_2: string;
-  method_3: string;
-};
-
 export type ContentAddFileTypes = {
   paymentProof: FileList;
   selectedClientName: string;
@@ -20,7 +13,17 @@ export type ContentAddFileTypes = {
 
 export type DetailsPaymentInfoProps = {
   text: string;
-  describe?: string;
-  warning?: string
+  describe?: boolean;
 };
 
+export type PayHeaderType = {
+  name: string;
+  price: string;
+  comissia?: string;
+};
+
+export type Lang = {
+  url: string,
+  tag: string,
+  name: string
+}
