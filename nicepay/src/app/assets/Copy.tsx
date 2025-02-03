@@ -12,7 +12,7 @@ export const Copy: React.FC<CopyProps> = ({ className, style }) => {
             xmlnsXlink="http://www.w3.org/1999/xlink"
             aria-hidden="true"
             role="img"
-            className={`icon ml-auto ${className}`} // Добавляем переданный класс
+            className={`icon ${className}`} // Добавляем переданный класс
             style={style}
             width="18px"
             height="18px"

@@ -1,1 +1,1 @@
-export * from "./ui";
+export { DialogCustom } from "./ui";

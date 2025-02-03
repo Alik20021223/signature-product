@@ -44,7 +44,7 @@ export const ContentDetails: React.FC<ContentDetails> = ({ data }) => {
                         {t('warningTxt')}
                     </div>
                 </div>
-                <div className="text-base font-semibold text-black dark:text-white mt-6 mb-4">Точная сумма перевода</div>
+                <div className="text-base font-semibold text-black dark:text-white mt-6 mb-4">{t('exactTransferAmount')}</div>
                 <DetailsPaymentInfo data={ContentDetailsPaymentData[1]} />
             </div>
         </>

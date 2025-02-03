@@ -1,10 +1,13 @@
 import { usePayStore } from "@entities/pay/store";
 import { Loading } from "@shared/ui/Loading"
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 
 export const PayLoading = () => {
-    const {  stopSearchDetails } = usePayStore()
+    const { stopSearchDetails } = usePayStore()
+
+    const { t } = useTranslation()
 
 
     useEffect(() => {
@@ -23,7 +26,7 @@ export const PayLoading = () => {
                     <Loading />
                 </div>
                 <p className="text-3xl font-bold text-black dark:text-white leading-none">
-                    Ищем реквизиты...
+                    {t('searchDetailsTxt')}
                 </p>
             </div>
         </>

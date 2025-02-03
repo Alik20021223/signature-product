@@ -1,4 +1,8 @@
 {
+    "titleDialogCustom": "D'accord, j'enverrai 2 625.10 ₽",
+    "subtitleDialogCustom": "Le montant du paiement a été modifié",
+    "warningDialogCustom": "N'oubliez pas d'indiquer les centimes !",
+    "doubleWarningDialogCustom": "Attention, payez exactement 2 625.10 ₽ avec les centimes pour un traitement instantané du paiement. Cela nous permettra de suivre votre paiement très rapidement",
     "sendToBankTxt": "Envoyer un virement via SBP",
     "sendMoneyDetailsTxt": "Transférez {{price}} ₽ selon les coordonnées indiquées",
     "transferToWhereTxt": "Virement vers la Banque du Tadjikistan (+992)",
@@ -12,9 +16,10 @@
     "howToSendMoneyTajDescribe": "Le transfert sera effectué de la même manière qu'un virement vers une autre banque !",
     "warningTxt": "Si vous transférez à d'autres coordonnées ou dans une autre banque, le dépôt ne sera pas crédité",
     "exactTransferAmount": "Montant exact du transfert",
-    "transferDescribe": "Des centimes ont été ajoutés au montant, maintenant 2 625.10 ₽. Envoyez le montant exact pour un crédit instantané",
+    "transferDescribe": "Des centimes ont été ajoutés au montant, maintenant {{price}}. Envoyez le montant exact pour un crédit instantané",
     "supportTxt": "Support",
     "sendTransferTxt": "J'ai effectué le transfert",
     "comissiongTxt": "Commission",
-    "timeToTransfer": "Temps pour effectuer le paiement, sinon le paiement sera annulé"
+    "timeToTransfer": "Temps pour effectuer le paiement, sinon le paiement sera annulé",
+    "searchDetailsTxt": "Nous recherchons les coordonnées"
 }
