@@ -4,6 +4,7 @@ import { schema } from "./validation";
 import { ContentAddFileTypes } from "@entities/pay/types";
 import { Button } from "@shadcn/Button/button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface FormAddFileProps {
     onSuccess: (value: boolean) => void
@@ -45,6 +46,8 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
         onSuccess(true)
     };
 
+    const { t } = useTranslation()
+
     return (
         <>
             <form
@@ -56,11 +59,11 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
                         <div className="flex flex-col items-center justify-center pt-4 pb-4">
                             <p className="mb-2 text-sm leading-none text-gray-500">
                                 <span className="font-semibold">
-                                    {preview ? preview : 'Выбрать фото или скриншот'}
+                                    {preview ? preview : t('fileSelectPrompt')}
                                 </span>
                             </p>
                             <p className="text-xs text-gray-500 leading-none">
-                                {preview ? 'Файл выбран' : 'JPG, PNG or PDF'}
+                                {preview ? t('fileSelected') : t('fileFormats')}
                             </p>
                         </div>
                         <Controller
@@ -91,13 +94,13 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
                             type="text"
                             {...register("selectedClientName")}
                             className="block px-4 py-4 w-full text-base font-semibold text-black dark:text-white bg-white/5 rounded-xl border-2 border-black/30 dark:border-white/10"
-                            placeholder="Кто отправитель перевода? Имя."
+                            placeholder={t("senderNamePlaceholder")}
                         />
                         <input
                             type="number"
                             {...register("selectedClientAmount", { valueAsNumber: true })}
                             className="block px-4 py-4 w-full text-base font-semibold text-black dark:text-white bg-white/5 rounded-xl border-2 border-black/30 dark:border-white/10"
-                            placeholder="Сколько Вы перевели?"
+                            placeholder={t("amountPlaceholder")}
                         />
                     </>
                 ) : null}
@@ -106,7 +109,7 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
                     type="submit"
                     className="flex items-center justify-center rounded-xl bg-lime-400/90 text-black py-3 px-6 font-medium duration-200"
                 >
-                    Отправить на проверку
+                    {t("submitForReview")}
                 </Button>
             </form>
         </>

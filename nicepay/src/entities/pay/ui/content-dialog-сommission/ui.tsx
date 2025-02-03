@@ -7,7 +7,7 @@ export const ContentDialogCommission = () => {
 
     return (
         <>
-            <DialogCustom submitText={t('titleDialogCustom')} defaultOpen={true} title={t('subtitleDialogCustom')}>
+            <DialogCustom  submitText={t('titleDialogCustom', { price: '2645.10' })} defaultOpen={true} title={t('subtitleDialogCustom')}>
                 <div className="bg-lime-500/20 rounded-2xl py-6 text-4xl md:text-6xl font-semibold text-center text-lime-500 mb-2 leading-none">
                     2 625.10 ₽
                 </div>
@@ -15,7 +15,7 @@ export const ContentDialogCommission = () => {
                     {t('warningDialogCustom')}
                 </div>
                 <p className="text-base font-normal text-white mb-8">
-                    {t('doubleWarningDialogCustom')}
+                    {t('doubleWarningDialogCustom', { price: '2645.10' })}
                 </p>
             </DialogCustom>
         </>
