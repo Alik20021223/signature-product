@@ -3,8 +3,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./validation";
 import { ContentAddFileTypes } from "@entities/pay/types";
 import { Button } from "@shadcn/Button/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import notifyService from "@shared/service/notify.service";
+import { useParams } from "react-router-dom";
+import { useMutationMarkConfirm } from "@entities/pay/hooks/use-mutation-mark-confirm";
+import { fileToBase64 } from "@app/lib/utils";
 
 interface FormAddFileProps {
     onSuccess: (value: boolean) => void
@@ -13,12 +17,16 @@ interface FormAddFileProps {
 export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
 
     const [preview, setPreview] = useState<string | null>(null);
+    const { t } = useTranslation()
+    const { id } = useParams()
+    const { mutateAsync } = useMutationMarkConfirm()
     const {
         register,
         handleSubmit,
         watch,
         control,
         formState: { errors },
+        setValue
     } = useForm<ContentAddFileTypes>({
         resolver: zodResolver(schema),
         defaultValues: {
@@ -27,6 +35,15 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
         },
         mode: 'onChange',
     });
+
+    useEffect(() => {
+        if (errors.paymentProof?.message) {
+            notifyService.error(errors.paymentProof?.message, t);
+            const dataTransfer = new DataTransfer();
+            setValue("paymentProof", dataTransfer.files); // Устанавливаем пустой FileList
+            setPreview(null);
+        }
+    }, [errors.paymentProof]);
 
     const paymentProof = watch("paymentProof");
 
@@ -38,15 +55,22 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
         setPreview(file?.name)
     };
 
-    const onSubmit = (data: ContentAddFileTypes) => {
-        console.log("Form Data:", {
-            ...data,
-            paymentProof: data.paymentProof[0], // Получаем первый файл из списка
-        });
-        onSuccess(true)
+
+    const onSubmit = async (data: ContentAddFileTypes) => {
+        try {
+            let fileBase64 = await fileToBase64(data.paymentProof[0]);
+            fileBase64 = fileBase64.split(",")[1];
+            await mutateAsync({
+                id: Number(id), // Преобразуем id в число
+                payload: fileBase64, // Передаем файл в формате base64
+            });
+            onSuccess(true); // Успешная отправка
+        } catch {
+            notifyService.error("Ошибка при отправке формы", t);
+        }
     };
 
-    const { t } = useTranslation()
+
 
     return (
         <>
@@ -83,9 +107,7 @@ export const FormAddFile: React.FC<FormAddFileProps> = ({ onSuccess }) => {
                                 />
                             )}
                         />
-                        {errors.paymentProof?.message ? (
-                            <p className="text-red-500">{errors.paymentProof?.message}</p>
-                        ) : null}
+
                     </label>
                 </div>
                 {paymentProof?.length > 0 ? (

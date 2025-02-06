@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { FormAddFile } from "./form";
 import { useTranslation } from "react-i18next";
+import { usePayStore } from "@entities/pay/store";
 
 const ContentAddFile = () => {
 
   const [success, setSuccess] = useState<boolean>(false)
 
+  const { DataPay } = usePayStore()
+
   const { t } = useTranslation()
+
+  function toSuccessPage(value: boolean) {
+    setSuccess(value);
+    const successUrl = DataPay?.success_url ? DataPay?.success_url : '';
+    if (successUrl) {
+      window.location.href = successUrl; // Переход на внешний сайт
+    }
+  }
 
   return (
     <div>
@@ -20,7 +31,7 @@ const ContentAddFile = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-x-4 items-center p-4 border-x border-b border-black/10 dark:border-white/10 rounded-b-3xl">
+      <div className="flex gap-x-4 max-sm:flex-col max-sm:space-y-5 items-center p-4 border-x border-b border-black/10 dark:border-white/10 rounded-b-3xl">
         <img
           className="w-[200px] shrink-0"
           src="https://nicepayio.s3.eu-central-1.amazonaws.com/images/reciepts.png"
@@ -39,7 +50,7 @@ const ContentAddFile = () => {
               </div>
             </div>
             :
-            <FormAddFile onSuccess={setSuccess} />
+            <FormAddFile onSuccess={toSuccessPage} />
           }
         </div>
       </div>

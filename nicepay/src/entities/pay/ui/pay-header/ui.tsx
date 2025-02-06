@@ -1,14 +1,11 @@
-import { PayHeaderType } from "@entities/pay/types"
-import { useTranslation } from "react-i18next"
+import { PaymentResponseType } from "@entities/pay/types"
 
 
 interface PayHeaderProps {
-    data: PayHeaderType
+    data: PaymentResponseType | undefined
 }
 
 const PayHeader: React.FC<PayHeaderProps> = ({ data }) => {
-
-    const { t } = useTranslation()
 
     return (
         <>
@@ -16,16 +13,16 @@ const PayHeader: React.FC<PayHeaderProps> = ({ data }) => {
                 <div className="flex justify-between items-center">
                     <div className="text-center">
                         <div className="text-xl md:text-2xl leading-none font-bold text-black dark:text-white">
-                            {data.name}
+                            Lolzteam market
                         </div>
                     </div>
                     <div className="text-right">
                         <div className="text-3xl font-bold text-black dark:text-white leading-none">
-                            {data.price}
+                            {data?.amount_local ? data.amount_local : 0} {data?.country.currency_code}
                         </div>
-                        {data.comissia ? <div className="text-xs text-black/30 dark:text-white/40 mt-2">
-                            {t('comissiongTxt')}: {data.comissia} ₽
-                        </div> : null}
+                        <div className="text-lg text-black/30 dark:text-white/40 mt-2">
+                            {data?.amount_usd ? data.amount_usd : 0} $
+                        </div>
                     </div>
                 </div>
             </div>

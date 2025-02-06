@@ -19,16 +19,21 @@
     "timeToTransfer": "Temps restant pour effectuer le paiement, sinon il sera annulé",
     "searchDetailsTxt": "Recherche des coordonnées",
     "titleDialogCustom": "D'accord, j'envoie {{price}} ₽",
-    "subtitleDialogCustom": "Le montant du paiement a été modifié",
-    "warningDialogCustom": "N'oubliez pas d'inclure les centimes !",
-    "doubleWarningDialogCustom": "Attention, payez exactement {{price}} ₽ avec les centimes pour un traitement instantané. Cela nous permettra de suivre votre paiement très rapidement",
+    "subtitleDialogCustom": "Payez le montant exact",
+    "doubleWarningDialogCustom": "Attention, payez exactement {{price}} ₽. Cela nous permettra de suivre votre paiement très rapidement.",
     "sendCheckConfirmTxt": "Envoyez un reçu, cela aidera à retrouver le paiement plus rapidement",
     "sendCheckDescribeTxt": "Ouvrez l'opération dans votre banque et appuyez sur \"Documents\" ou \"Reçu\"",
     "confirmMessageTxt": "Merci ! Confirmation téléchargée.",
     "fileSelectPrompt": "Sélectionner une photo ou une capture d'écran",
     "fileSelected": "Fichier sélectionné",
+    "copyTxt": "Copié",
     "fileFormats": "JPG, PNG ou PDF",
     "senderNamePlaceholder": "Qui est l'expéditeur du transfert ? Nom.",
     "amountPlaceholder": "Combien avez-vous transféré ?",
-    "submitForReview": "Envoyer pour vérification"
+    "submitForReview": "Envoyer pour vérification",
+    "error": "Erreur!",
+    "warning": "Avertissement!",
+    "info": "Information!",
+    "success": "Succès!"
+      
 }

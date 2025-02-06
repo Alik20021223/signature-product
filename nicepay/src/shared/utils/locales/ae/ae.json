@@ -19,9 +19,8 @@
     "timeToTransfer": "الوقت المتبقي للدفع، وإلا سيتم إلغاء العملية",
     "searchDetailsTxt": "نبحث عن التفاصيل",
     "titleDialogCustom": "حسنًا، سأرسل {{price}} ₽",
-    "subtitleDialogCustom": "تم تعديل مبلغ الدفع",
-    "warningDialogCustom": "لا تنسَ إدخال الكسور!",
-    "doubleWarningDialogCustom": "تنبيه، ادفع بالضبط {{price}} ₽ مع الكسور لمعالجة الدفع فورًا. هكذا يمكننا تتبع دفعتك بسرعة كبيرة",
+    "subtitleDialogCustom": "ادفع المبلغ الدقيق",
+    "doubleWarningDialogCustom": "تنبيه، ادفع بالضبط {{price}} ₽. هكذا يمكننا تتبع دفعتك بسرعة كبيرة.",
     "sendCheckConfirmTxt": "أرسل إيصال الدفع، هذا سيساعد في العثور على الدفع بشكل أسرع",
     "sendCheckDescribeTxt": "افتح العملية في البنك واضغط على \"المستندات\" أو \"الإيصال\"",
     "confirmMessageTxt": "شكرًا لك! تم تحميل التأكيد.",
@@ -30,5 +29,9 @@
     "fileFormats": "JPG, PNG أو PDF",
     "senderNamePlaceholder": "من هو مرسل التحويل؟ الاسم.",
     "amountPlaceholder": "كم قمت بالتحويل؟",
-    "submitForReview": "إرسال للمراجعة"
+    "submitForReview": "إرسال للمراجعة",
+    "success": "نجاح!",
+    "error": "خطأ!",
+    "warning": "تحذير!",
+    "info": "معلومة!"
 }

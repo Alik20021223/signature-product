@@ -25,7 +25,7 @@ export const PopoverLang = () => {
                 <PopoverContent className="dark:border-none  overflow-hidden focus:outline-none relative bg-white dark:bg-gray-600/10 backdrop-blur-xl ring-gray-200 dark:ring-gray-800 ring-0 rounded-xl shadow-lg">
                     <div className="flex flex-col">
                         {LanguageMock.map((item) => (
-                            <div onClick={() => handleChangeLang(item)} className="flex items-center gap-x-3 text-base text-black dark:text-white text-medium hover:bg-white/10 rounded-lg px-2 py-2 duration-200 cursor-pointer">
+                            <div key={item.tag} onClick={() => handleChangeLang(item)} className="flex items-center gap-x-3 text-base text-black dark:text-white text-medium hover:bg-white/10 rounded-lg px-2 py-2 duration-200 cursor-pointer">
                                 <img src={item.url} alt={item.tag} className="h-4" />
                                 <span className="truncate">{item.name}</span>
                             </div>

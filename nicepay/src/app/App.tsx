@@ -1,8 +1,9 @@
 import { usePayStore } from "@entities/pay/store"
 import { RouterProvider } from 'react-router-dom';
-// import { PayContent } from "@widgets/pay/pay-content/ui"
 import { Suspense } from "react"
 import { router } from "./router";
+import { Toaster } from "@shadcn/Sonner/sonner";
+import { Info, ShieldAlert, TriangleAlert, Zap } from 'lucide-react';
 
 function App() {
 
@@ -16,7 +17,18 @@ function App() {
       >
         <Suspense fallback={null}>
           <RouterProvider router={router} />
+          <Toaster
+            position='top-right'
+            closeButton
+            icons={{
+              success: <Zap className='text-green-500' size={16} />,
+              info: <Info className='text-blue-500' size={16} />,
+              warning: <TriangleAlert className='text-yellow-600' size={16} />,
+              error: <ShieldAlert className='text-red-500' size={16} />,
+            }}
+          />
         </Suspense>
+
       </div>
     </>
   )

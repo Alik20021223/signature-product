@@ -6,6 +6,9 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  server: {
+    port: 3000, // Установите желаемый порт
+  },
   resolve: {
     alias: {
       "@app": path.resolve(__dirname, "./src/app"),

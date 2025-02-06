@@ -24,22 +24,22 @@ export const ContentDetailsData: DetailsPaymentType = {
 };
 
 export const LanguageMock: Lang[] = [
-    {
-        name: 'Русский',
-        tag: 'ru',
-        url: 'https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-ru.svg'
-    },
-    {
-        name: 'Français',
-        tag: 'fr',
-        url: 'https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-fr.svg'
-    },
-    {
-        name: 'عربي',
-        tag: 'ae',
-        url: 'https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-ae.svg'
-    },
-]
+  {
+    name: "Русский",
+    tag: "ru",
+    url: "https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-ru.svg",
+  },
+  {
+    name: "Français",
+    tag: "fr",
+    url: "https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-fr.svg",
+  },
+  {
+    name: "عربي",
+    tag: "ae",
+    url: "https://nicepayio.s3.eu-central-1.amazonaws.com/flags/country-ae.svg",
+  },
+];
 
 export const PayHeaderMock: PayHeaderType = {
   name: "Lolzteam market",

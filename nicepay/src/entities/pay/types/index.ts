@@ -23,7 +23,38 @@ export type PayHeaderType = {
 };
 
 export type Lang = {
-  url: string,
-  tag: string,
-  name: string
-}
+  url: string;
+  tag: string;
+  name: string;
+};
+
+export type createPaymentType = {
+  country_iso: string;
+  amount_usd: number;
+  amount_local: number;
+  webhook_url: string;
+  success_url: string;
+};
+
+export type PaymentResponseType = {
+  id: number;
+  status: string;
+  amount_local: string;
+  amount_usd: string;
+  country: {
+    iso_code: string,
+    name: string,
+    currency_code: string,
+    usd_rate: 100
+  },
+  requisites: {
+    account_number: string;
+    bank_name: string;
+    account_holder_name: string;
+  };
+  success_url: string;
+  created_at: string;
+  paid_at: string;
+  confirmed_at: string;
+};
+

@@ -9,11 +9,11 @@ export const router = createBrowserRouter([
         element: <DefaultLayout />,
         children: [
             {
-                path: '',
+                path: '/:id',
                 element: <PaymentPage />
             },
             {
-                path: '/confirm',
+                path: '/:id/confirm',
                 element: <PaymentConfirmPage />
             }
         ],

@@ -8,6 +8,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@shadcn/Dialog/dialog";
+import { useState } from "react";
 
 interface DialogCustomProps {
     defaultOpen: boolean;
@@ -19,16 +20,17 @@ interface DialogCustomProps {
 
 export const DialogCustom: React.FC<DialogCustomProps> = ({
     title,
-    defaultOpen = false,
+    defaultOpen,
     ButtonOpen,
     children,
-    submitText
+    submitText,
 }) => {
 
     const { activeLang } = usePayStore()
+    const [isOpen, setIsOpen] = useState<boolean>(defaultOpen)
 
     return (
-        <Dialog defaultOpen={defaultOpen}>
+        <Dialog open={isOpen} onOpenChange={setIsOpen} >
             {ButtonOpen ? (
                 <DialogTrigger asChild>
                     <Button variant="outline">{ButtonOpen}</Button>
@@ -42,7 +44,7 @@ export const DialogCustom: React.FC<DialogCustomProps> = ({
                 </DialogHeader>
                 {children}
                 <DialogFooter>
-                    <Button dir={activeLang.tag === "ae" ? "rtl" : "ltr"} className="flex border-none items-center justify-between rounded-xl bg-amber-400/90 dark:bg-amber-400/90 text-black opacity-100 hover:opacity-80 py-4 px-4 text-base font-bold disabled:opacity-70 disabled:cursor-default duration-200 w-full" type="submit">
+                    <Button onClick={() => setIsOpen(false)} dir={activeLang.tag === "ae" ? "rtl" : "ltr"} className="flex border-none items-center justify-between rounded-xl bg-amber-400/90 dark:bg-amber-400/90 text-black opacity-100 hover:opacity-80 py-4 px-4 text-base font-bold disabled:opacity-70 disabled:cursor-default duration-200 w-full" type="submit">
                         {submitText}
                     </Button>
                 </DialogFooter>
