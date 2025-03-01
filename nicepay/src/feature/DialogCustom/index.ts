@@ -1,1 +1,0 @@
-export { DialogCustom } from "./ui";
